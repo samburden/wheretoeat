@@ -1,0 +1,48 @@
+<div class="page-head">
+  <div class="container">
+    <div class="page-title">
+      <h1>Reports</h1>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="portlet box green-haze">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-pie-chart fa-fw"></i> Restaurants By Category
+                    </div>
+
+                </div>
+                <div class="portlet-body">
+                    <div class="row text-center">
+                        <div donut-chart donut-data="typeReportData"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="portlet box green-haze">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-bar-chart fa-fw"></i> Which Days You Eat Out
+                    </div>
+
+                </div>
+                <div class="portlet-body">
+                    <div class="row text-center">
+                        <div bar-chart
+                             bar-data='dayReportData'
+                             bar-x='label'
+                             bar-y='["value"]'
+                             labels='labels'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

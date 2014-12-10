@@ -1,0 +1,97 @@
+<div class="page-header">
+  <!-- BEGIN HEADER TOP -->
+  <div class="page-header-top">
+    <div class="container">
+      <!-- BEGIN LOGO -->
+      <!--<div class="page-logo">-->
+        <!--<a href="index.html">-->
+          <!--<img src="assets/images/where-to-eat-header.png" alt="logo" class="logo-default pad-10" width="150" height="50"/>-->
+        <!--</a>-->
+      <!--</div>-->
+
+      <div class="page-logo">
+        <a href="index.html"><img src="assets/images/where-to-eat-header.png" alt="logo" class="logo-default" width="175" height="50"/></a>
+      </div>
+      <!-- END LOGO -->
+      <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+      <a href="javascript:;" class="menu-toggler"></a>
+      <!-- END RESPONSIVE MENU TOGGLER -->
+      <!-- BEGIN TOP NAVIGATION MENU -->
+      <div class="top-menu">
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown dropdown-user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+              <i class="fa fa-user fa-3x"></i>
+              <span class="username username-hide-mobile">
+              {{currentUser.name}}
+              </span>
+              <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-default">
+              <li>
+                <a ng-click="logout()">
+                  <i class="icon-key"></i> Log Out </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+  </div>
+  <!-- END HEADER -->
+  <!-- BEGIN CONTAINER -->
+  <div class="page-header-menu">
+    <div class="container">
+      <div class="hor-menu ">
+        <ul class="nav navbar-nav">
+          <li ng-class="{'active': selectedMenuItem === 'main'}">
+            <a ng-click="setSelected('main')">
+              <i class="icon-home"></i>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li ng-class="{'active': selectedMenuItem === 'rest'}">
+            <a ng-click="setSelected('rest')">
+              <i class="icon-book-open"></i>
+              <span class="title">My Restaurant List</span>
+            </a>
+          </li>
+          <li ng-class="{'active': selectedMenuItem === 'reports'}">
+            <a ng-click="setSelected('reports')">
+              <i class="icon-pie-chart"></i>
+              <span class="title">Reports</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-container">
+    <div ng-if="selectedMenuItem === 'main'" ng-include="'app/main/mainContent.html'"
+         ng-controller="MainContentCtrl"></div>
+    <div ng-if="selectedMenuItem === 'rest'" ng-include="'app/main/myRestaurantList.html'"></div>
+    <div ng-if="selectedMenuItem === 'reports'" ng-include="'app/main/reports.html'" ng-controller="ReportCtrl"></div>
+</div>
+<div class="page-footer">
+  <div class="container">
+    2014 &copy; Where To Eat? All Rights Reserved.
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $(".page-header .menu-toggler").on("click", function(event) {
+      var menu = $(".page-header .page-header-menu");
+      if (menu.hasClass("page-header-menu-opened")) {
+        menu.slideUp(300);
+        menu.removeClass("page-header-menu-opened");
+      } else {
+        menu.slideDown(300);
+        menu.addClass("page-header-menu-opened");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,37 @@
+<div>
+    <div class="row pad-10 text-center">
+        <form role="form" class="form-inline" name="restaurantForm" novalidate>
+            <div class="form-group" ng-class="{'has-error': restaurantForm.loc.$invalid && restaurantForm.loc.$dirty}">
+                <label class="sr-only" for="loc">Location</label>
+                <input type="text" class="form-control" id="loc" name="loc" ng-model="formData.location" placeholder="City,State" required>
+            </div>
+            <button class="btn btn-primary" ng-click="findRestaurantFromList()"><i class="fa fa-search"></i> Search My List</button>
+            <button class="btn btn-primary" ng-click="findRestaurantFromYelp()"><i class="fa fa-yelp"></i> Search Yelp</button>
+         </form>
+
+    </div>
+    <div class="row text-center" ng-if="message">
+        <p class="errorMessage">{{message}}</p>
+    </div>
+    <hr>
+    <div class="row text-center" ng-if="restaurant">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{restaurant.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img ng-src="{{restaurant.image_url}}"/>
+                    <address>{{restaurant.location.display_address[0]}}</br>{{restaurant.location.display_address[1]}}</address>
+                    <img ng-src="{{restaurant.rating_img_url_small}}"/>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">{{restaurant.display_phone}}</li>
+                    <li class="list-group-item"><button class="btn btn-primary" ng-click="eatAtRestaurant(restaurant)">Eat Here</button>
+                        <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

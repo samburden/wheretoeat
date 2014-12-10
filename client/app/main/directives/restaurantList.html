@@ -1,0 +1,32 @@
+<div>
+    <div class="row text-center" ng-if="results.length == 0">
+        <span>No Restaurants in Your List</span>
+    </div>
+    <div class="row" ng-repeat="i in range">
+        <div class="col-md-4" ng-repeat="item in filteredResults.slice(i,i+3)">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{item.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img ng-src="{{item.image_url}}"/>
+                    <address>{{item.location.display_address[0]}}</br>{{item.location.display_address[1]}}</address>
+                    <img ng-src="{{item.rating_img_url_small}}"/>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">{{item.display_phone}}</li>
+                    <li class="list-group-item"><button class="btn btn-primary" ng-click="removeFromList(item)">Remove From List</button>
+                        <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" ng-if="results.length > 0">
+        <pagination total-items="results.length"
+                    ng-model="data.currentPage"
+                    max-size="maxSize"
+                    class="pagination-sm"
+                    items-per-page="numPerPage"
+                    ng-change="pageChanged()"></pagination>
+    </div>
+</div>
