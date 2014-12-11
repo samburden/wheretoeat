@@ -1,26 +1,55 @@
-<header class="image-bg-fluid-height">
-  <img class="img-responsive img-center" src="assets/images/where-to-eat-header.png" alt="where-to-eat-logo">
-</header>
+<div class="page-container pad-10-bottom">
 
-<!-- Content Section -->
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="section-heading">Where To Eat?</h1>
-        <p class="section-paragraph">The Where To Eat? app is a tool to help you determine where to eat tonight.</p>
+  <div class="page-content">
+    <div class="image-bg-fluid-height">
+      <img class="img-responsive img-center" src="assets/images/where-to-eat-logo.png" alt="where-to-eat-logo">
+    </div>
+    <!-- Content Section -->
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12">
+            <h1 class="section-heading">Where To Eat?</h1>
+            <p class="section-paragraph">The Where To Eat? application is a tool to help you determine where to eat.</p>
+          </div>
+        </div>
+        <div class="row service-box margin-bottom-40">
+          <div class="col-md-4 col-sm-4">
+            <div class="service-box-heading">
+              <em><i class="fa fa-yelp red"></i></em>
+              <span>Yelp Integration</span>
+            </div>
+            <p>The application provides integration with Yelp so you can search for restaurants in your area. You can also save your favorite restaurants so you have quick access to them later.</p>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="service-box-heading">
+              <em><i class="fa fa-cutlery blue"></i></em>
+              <span>Restaurant Picker</span>
+            </div>
+            <p>Allow the application to select a restaurant for you to eat at. The application can pick a restaurant from your personal list or let it search for restaurants in your area using Yelp.</p>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="service-box-heading">
+              <em><i class="fa fa-pie-chart green"></i></em>
+              <span>Reports</span>
+            </div>
+            <p>See where you have eaten lately and what types of restaurants you prefer. You can even see which days of the week you eat out most often.</p>
+          </div>
+        </div>
+        <div class="row text-center">
+          <button class="btn btn-google-plus" ng-click="loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Sign in with Google
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="row text-center">
-      <button class="btn btn-google-plus" ng-click="loginOauth('google')">
-        <i class="fa fa-google-plus"></i> Sign in with Google
-      </button>
-    </div>
   </div>
-</section>
-<br/>
+</div>
 <div class="page-footer">
   <div class="container">
     2014 &copy; Where To Eat? All Rights Reserved.
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    calcMinHeight();
+  });
+</script>

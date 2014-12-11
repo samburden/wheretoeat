@@ -7,9 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
+    <title>Where To Eat?</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -17,8 +19,6 @@
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
       <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
       <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
-      <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" />
-      <link rel="stylesheet" href="bower_components/open-sans-fontface/open-sans.css" />
       <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css" />
       <!-- endbower -->
     <!-- endbuild -->
@@ -31,6 +31,7 @@
       <link rel="stylesheet" href="app/home/home.css">
       <link rel="stylesheet" href="app/home/layout.css">
       <link rel="stylesheet" href="app/home/pricing-table.css">
+      <link rel="stylesheet" href="app/main/simple-line-icons.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -80,6 +81,7 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/custom.js"></script>
           <script src="app/home/home.controller.js"></script>
           <script src="app/home/home.js"></script>
           <script src="app/main/directives/morrisCharts.js"></script>

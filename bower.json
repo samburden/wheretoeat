@@ -16,9 +16,7 @@
     "lodash": "~2.4.1",
     "bootstrap-social": "~4.8.0",
     "ngmorris": "~0.0.2",
-    "simple-line-icons": "~0.1.0",
     "bootstrap-hover-dropdown": "~2.0.11",
-    "open-sans-fontface": "~1.1.0",
     "angular-growl-v2": "~0.7.2"
   },
   "devDependencies": {
