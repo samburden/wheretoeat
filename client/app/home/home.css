@@ -29,6 +29,10 @@
   margin: 10px;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .logo-font {
   font-weight: bolder;
   font-size: 72px;

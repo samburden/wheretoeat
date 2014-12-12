@@ -15,23 +15,26 @@
     </div>
     <hr>
     <div class="row text-center" ng-if="restaurant">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{restaurant.name}}</h3>
-                </div>
-                <div class="panel-body">
-                    <img ng-src="{{restaurant.image_url}}"/>
-                    <address>{{restaurant.location.display_address[0]}}</br>{{restaurant.location.display_address[1]}}</address>
-                    <img ng-src="{{restaurant.rating_img_url_small}}"/>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">{{restaurant.display_phone}}</li>
-                    <li class="list-group-item"><button class="btn btn-primary" ng-click="eatAtRestaurant(restaurant)">Eat Here</button>
-                        <!--</li>-->
-                </ul>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="portlet box green-haze text-center">
+            <div class="portlet-title">
+              <div class="caption">
+                {{restaurant.name}}
+              </div>
             </div>
+            <div class="portlet-body">
+              <div class="panel-body">
+                <img ng-src="{{restaurant.image_url}}"/>
+                <address>{{restaurant.location.display_address[0]}}</br>{{restaurant.location.display_address[1]}}</address>
+                <img ng-src="{{restaurant.rating_img_url_small}}"/>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item">{{restaurant.display_phone}}</li>
+                <li class="list-group-item"><button class="btn btn-primary" ng-click="eatAtRestaurant(restaurant)">Eat Here</button>
+              </ul>
+            </div>
+          </div>
         </div>
     </div>
 </div>
