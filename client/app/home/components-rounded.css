@@ -2991,7 +2991,7 @@ UI Loading
 }
 
 .page-spinner-bar {
-  position: fixed;
+  position: relative;
   z-index: 10051;
   width: 100px;
   top: 40%;

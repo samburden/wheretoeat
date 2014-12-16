@@ -3,10 +3,13 @@ angular.module('wheretoeatApp')
     function ($rootScope, $scope, restaurantSvc) {
 
       $scope.reportData = [];
+      $scope.loading = false;
 
       function generateReport() {
+        $scope.loading = true;
         restaurantSvc.generateReportByRestaurant().success(function(result) {
           $scope.reportData = result;
+          $scope.loading = false;
         });
       }
 

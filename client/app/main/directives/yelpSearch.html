@@ -15,6 +15,11 @@
         </form>
     </div>
     <hr>
+    <div ng-if="searching" class="page-spinner-bar">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
     <div class="row" ng-repeat="i in range">
         <div class="col-sm-4" ng-repeat="item in filteredResults.slice(i,i+3)">
           <div class="portlet box green-haze text-center">

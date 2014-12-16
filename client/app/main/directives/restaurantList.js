@@ -7,8 +7,10 @@ angular.module('wheretoeatApp')
             scope.numPerPage = 6;
             scope.maxSize = 5;
             scope.range = [];
+            scope.loading = false;
 
             function retrieveRestaurantList() {
+                scope.loading = true;
                 restaurantSvc.retrieveRestaurantList().success(function(restaurant) {
                     if (restaurant) {
                       scope.results = restaurant.restaurantList;
@@ -17,8 +19,10 @@ angular.module('wheretoeatApp')
                     }
                     scope.data.currentPage = 1;
                     scope.pageChanged();
+                    scope.loading = false;
                 }).error(function() {
                     growl.error("Failed to retrieve list");
+                    scope.loading = false;
                 });
             }
             retrieveRestaurantList();

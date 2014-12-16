@@ -18,6 +18,11 @@
                 </div>
                 <div class="portlet-body">
                     <div class="row text-center">
+                        <div ng-if="pieLoading" class="page-spinner-bar">
+                          <div class="bounce1"></div>
+                          <div class="bounce2"></div>
+                          <div class="bounce3"></div>
+                        </div>
                         <div donut-chart donut-data="typeReportData"></div>
                     </div>
                 </div>
@@ -32,6 +37,11 @@
                 </div>
                 <div class="portlet-body">
                     <div class="row text-center">
+                        <div ng-if="barLoading" class="page-spinner-bar">
+                          <div class="bounce1"></div>
+                          <div class="bounce2"></div>
+                          <div class="bounce3"></div>
+                        </div>
                         <div bar-chart
                              bar-data='dayReportData'
                              bar-x='label'

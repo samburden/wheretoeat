@@ -11,16 +11,20 @@ angular.module('wheretoeatApp')
             scope.numPerPage = 6;
             scope.maxSize = 5;
             scope.range = [];
+            scope.searching = false;
 
             scope.performSearch = function() {
+              scope.searching = true;
                 yelpSearchSvc.searchYelp(scope.formData.location, scope.formData.term).success(function(data) {
                     if (data) {
                         scope.results = data.businesses;
                     }
                     scope.data.currentPage = 1;
                     scope.pageChanged();
+                    scope.searching = false;
                 }).error(function() {
                     growl.error("Restaurant Search Failed");
+                    scope.searching = false;
                 })
             }
 
